@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<submission>
+  <student>
+    <name>Syntyche Shimbi Amunaso</name>
+    <noma>0062-13-00</noma>
+  </student>
+  <solutions>
+
+    
+    <puzzle id="S1">
+
+      <!-- One solution in Tutorial D 
+           we use CDATA to avoid character clashes with XML itself -->
+      <answer language="tutorial-d"><![CDATA[
+        PARTS
+      ]]></answer>
+
+      <!-- One solution in SQL, kept for your own reasons -->
+      <answer language="sql"><![CDATA[
+        SELECT p.pid FROM parts AS p
+      ]]></answer>
+
+      <!-- Another solution in SQL,
+           ONLY this one will be taken into account so keep your best
+           one as last one per puzzle entry -->
+      <answer language="sql"><![CDATA[
+        SELECT pid FROM parts
+      ]]></answer>
+
+    </puzzle>
+
+    <puzzle id="S2">
+	      <answer language="tutorial-d"><![CDATA[
+        	PARTS{PID, NAME}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+<puzzle id="S3">
+	      <answer language="tutorial-d"><![CDATA[
+
+        	PARTS{  ALL BUT  WEIGHT }
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+<puzzle id="S4">
+	      <answer language="tutorial-d"><![CDATA[
+
+        	PARTS{CITY}
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+<puzzle id="S5">
+	      <answer language="tutorial-d"><![CDATA[
+
+        	PARTS WHERE  THE_WEIGHT(WEIGHT)  >= 14.0 AND  THE_WEIGHT(WEIGHT)  < 17.0
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+
+<puzzle id="S6">
+	      <answer language="tutorial-d"><![CDATA[
+
+PARTS  WHERE CITY = "London"  OR CITY ="Paris"
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+              ]]></answer>
+
+      <answer language="sql"><![CDATA[
+           ]]></answer>
+
+    </puzzle>
+
+<puzzle id="S7">
+	      <answer language="tutorial-d"><![CDATA[
+
+PARTS  WHERE NOT ( CITY = "London"  OR CITY ="Paris")
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+<puzzle id="S8">
+	      <answer language="tutorial-d"><![CDATA[
+
+(PARTS WHERE  CITY = "London"){PID}
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+       
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+
+<puzzle id="E1">
+	      <answer language="tutorial-d"><![CDATA[
+
+(SHIPMENTS WHERE SID =  S#('S2') ) {PID} 
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+              ]]></answer>     
+
+ <answer language="sql"><![CDATA[
+              ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="E2">
+	      <answer language="tutorial-d"><![CDATA[
+
+			COUNT(SUPPLIERS)
+      ]]></answer>     
+
+ <answer language="sql"><![CDATA[
+              
+]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+
+    </puzzle>
+
+<puzzle id="E3">
+	      <answer language="tutorial-d"><![CDATA[
+
+			COUNT(SUPPLIERS WHERE SID= S#('S3'))
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+    </puzzle>
+
+<puzzle id="E4">
+	      <answer language="tutorial-d"><![CDATA[
+			PARTS MATCHING SHIPMENTS
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+    </puzzle>
+
+<puzzle id="E5">
+	      <answer language="tutorial-d"><![CDATA[
+			PARTS NOT MATCHING SHIPMENTS
+      ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="E6">
+	      <answer language="tutorial-d"><![CDATA[
+		SUPPLIERS{SID, CITY} MATCHING SHIPMENTS  JOIN PARTS{ NAME, WEIGHT} MATCHING SHIPMENTS
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="M1">
+	      <answer language="tutorial-d"><![CDATA[
+	(SUMMARIZE SHIPMENTS JOIN PARTS  BY {SID} : { S :=  SUM(THE_WEIGHT(WEIGHT) )}) WHERE SID = S#('S1') 
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+
+<puzzle id="M2">
+	      <answer language="tutorial-d"><![CDATA[
+	(SHIPMENTS JOIN SUPPLIERS MATCHING SHIPMENTS WHERE STATUS >= 20){PID}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+        
+      ]]></answer>
+
+    </puzzle>
+
+<puzzle id="M3">
+	      <answer language="tutorial-d"><![CDATA[
+	(SUMMARIZE SHIPMENTS BY {PID} : { S :=  COUNT() }) WHERE S > 1 
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="M4">
+	      <answer language="tutorial-d"><![CDATA[
+	((SUPPLIERS JOIN SHIPMENTS) WHERE NAME=(MIN(SUPPLIERS MATCHING SHIPMENTS, NAME))) {PID}
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="M5">
+	      <answer language="tutorial-d"><![CDATA[
+(SUMMARIZE SHIPMENTS JOIN PARTS  BY {SID} : { S :=  SUM(THE_WEIGHT(WEIGHT) )})
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+
+<puzzle id="M6">
+	      <answer language="tutorial-d"><![CDATA[
+(PARTS WHERE THE_WEIGHT(WEIGHT) = MAX(PARTS,  THE_WEIGHT(WEIGHT))){PID}
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="D1">
+	      <answer language="tutorial-d"><![CDATA[
+(PARTS{PID, NAME} MATCHING ((SUPPLIERS JOIN  SHIPMENTS WHERE NOT( STATUS <=20)){PID}))
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+
+<puzzle id="D2">
+	      <answer language="tutorial-d"><![CDATA[
+(( SHIPMENTS { SID, PID } GROUP { SID } AS GROUPED_SID ) WHERE GROUPED_SID = SUPPLIERS { SID }){PID}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="D3">
+	      <answer language="tutorial-d"><![CDATA[
+ SUPPLIERS WHERE THE_NAME(NAME) < THE_NAME(NAME FROM TUPLE FROM(SUPPLIERS WHERE SID = S#("S1")))
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="D4">
+	      <answer language="tutorial-d"><![CDATA[
+ (((SUPPLIERS RENAME {CITY AS SUP_CITY}){SID, SUP_CITY} JOIN PARTS{PID, CITY}) WHERE NOT( SUP_CITY = CITY)){PID, SID}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="D5">
+	      <answer language="tutorial-d"><![CDATA[
+EXTEND((SUPPLIERS){CITY} UNION (PARTS){CITY}) RENAME {CITY AS C}:{
+	PS := COUNT( PARTS WHERE CITY=C),
+	SS :=COUNT(SUPPLIERS WHERE CITY=C),
+	
+	TOTAL := SUM ( ( ( SUPPLIERS{SID, CITY} JOIN SHIPMENTS )JOIN ((PARTS{PID, WEIGHT,CITY} )WHERE CITY = C) ), CAST_AS_RATIONAL( QTY) *THE_WEIGHT(WEIGHT) )
+
+}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="D6">
+	      <answer language="tutorial-d"><![CDATA[
+PARTS WHERE PID = MAX( (PARTS WHERE THE_WEIGHT(WEIGHT) =  MIN (PARTS, THE_WEIGHT (WEIGHT)))  , PID)} 
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+
+<puzzle id="H1">
+	      <answer language="tutorial-d"><![CDATA[
+SUMMARIZE  ( (SUPPLIERS{CITY} JOIN PARTS{CITY, WEIGHT}) ) BY {CITY}: {
+
+	AVG_WEIGHT := AVG (THE_WEIGHT(WEIGHT))
+}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="H2">
+	      <answer language="tutorial-d"><![CDATA[
+((((SUPPLIERS WHERE STATUS <= 20 ){SID} JOIN SHIPMENTS{SID, PID}) GROUP {SID} AS GROUPED_SID ) WHERE GROUPED_SID = (SUPPLIERS WHERE STATUS <= 20 ){SID}){PID}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="H3">
+	      <answer language="tutorial-d"><![CDATA[
+((
+(SHIPMENTS RENAME{PID AS PX, SID AS S}){PX, S} 
+	TIMES 
+(SHIPMENTS RENAME{PID AS PY}){PY, SID}
+) WHERE (SID=S  AND PX < PY  )
+) {PX, PY}
+
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+<puzzle id="H4">
+	      <answer language="tutorial-d"><![CDATA[
+(((PARTS RENAME {CITY AS CITY1, PID AS P}){P, CITY1} TIMES (PARTS RENAME {PID AS Q}){Q, CITY}) WHERE ( CITY = CITY1 AND P < Q) ){P, Q}
+      ]]></answer>
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+
+    </puzzle>
+
+
+
+<puzzle id="H5">
+	      <answer language="tutorial-d"><![CDATA[
+	SUMMARIZE(
+ (SHIPMENTS JOIN PARTS {PID, WEIGHT})
+
+MATCHING
+
+(
+
+
+(
+(((SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}) ) 
+WHERE Q=MAX( ((SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}) ), Q ) ) {SID}
+)
+UNION
+
+(
+ ((SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)})  WHERE
+	
+
+          		 Q= MAX(  (  
+	                    		 (
+	                            		   (  SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}   )
+	        
+                                                  	 WHERE 
+							Q <>  (   MAX     ((  SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)} ) , Q )  )
+	                     ))
+
+                         , Q) 
+   )
+{SID}
+)
+UNION
+(((SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}) WHERE Q= MAX     (     
+	 (SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}) 
+	WHERE
+		(Q<> MAX     (  (  SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)} ) , Q ))
+		AND
+		(Q <> MAX(    (   (  SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)}   ) WHERE  Q <>  (   MAX     (  (  SUMMARIZE SHIPMENTS BY {SID}:{Q:=SUM(QTY)} ), Q )  )
+	                                )
+
+                         
+
+                         , Q) )
+
+
+, Q )){SID})
+
+)
+)  BY {SID}: {
+	TOTAL_WEIGHT := SUM(CAST_AS_RATIONAL( QTY)* THE_WEIGHT(WEIGHT) )
+}
+]]></answer>
+
+
+      <answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+<answer language="sql"><![CDATA[
+             
+ ]]></answer>
+
+    </puzzle>
+
+
+
+
+
+
+
+  </solutions>
+</submission>
